@@ -17,6 +17,7 @@ A Java-based processing and trimming tool for Illumina NGS sequencing data, deve
   - [Single End](#single-end)
 - [de.NBI & ELIXIR Service](#trimmomatic-is-a-denbi--elixir-service)
 - [Build from Source](#build-from-source)
+  - [Development Container](#development-container)
 - [Running Trimmomatic](#running-trimmomatic)
   - [Paired End Mode](#paired-end-mode)
   - [Single End Mode](#single-end-mode)
@@ -132,6 +133,36 @@ Clone the repository, change into the top-level directory, and build using the f
 ```bash
 mvn clean package
 ```
+
+### Development Container
+
+The repository has a dev container with JDK 25 and Maven. To use it, you must have Docker and Visual Studio Code with the Dev Containers extension.
+
+1. Open the repository folder in Visual Studio Code.
+2. When the prompt shows, select **Reopen in Container**. Alternatively, open the Command Palette and select **Dev Containers: Reopen in Container**.
+3. Wait for the container to build. The first build can take some minutes.
+
+Run all tests:
+
+```bash
+mvn test
+```
+
+Run the tests in one class:
+
+```bash
+mvn test -Dtest=FastaParserTest
+```
+
+The test results are in `target/surefire-reports/`.
+
+Run the full build:
+
+```bash
+mvn verify
+```
+
+This command runs the tests, makes the JAR and the release zip and makes a code coverage report. Open `target/site/jacoco/index.html` to see the coverage report.
 
 ---
 

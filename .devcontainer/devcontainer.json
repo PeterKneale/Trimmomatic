@@ -1,0 +1,18 @@
+{
+  "name": "Trimmomatic",
+  "image": "mcr.microsoft.com/devcontainers/base:resolute",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "25",
+      "jdkDistro": "tem",
+      "installMaven": true
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack"
+      ]
+    }
+  }
+}
